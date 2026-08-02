@@ -16,7 +16,7 @@ public class Assignment1Part1 extends KarelTheRobot {
     }
 
     /* Karel building column, turning around, moving to the ground, and turning to face the
-    ground of the next column
+     * ground of the next column
      */
     private void buildColumnNComeback() throws Exception {
         buildColumn();
@@ -24,7 +24,7 @@ public class Assignment1Part1 extends KarelTheRobot {
     }
 
     /* After Karel built column he turns 180 and moving to the ground
-    after that he turns to face the ground of the next column
+     * after that he turns to face the ground of the next column
      */
     private void turnAroundAndComeback() throws Exception {
         turnAround();
@@ -35,7 +35,7 @@ public class Assignment1Part1 extends KarelTheRobot {
 
     }
 
-    /* Karel turning 180 degrees */
+    // Karel turning 180 degrees
     private void turnAround() throws Exception {
         turnLeft();
         turnLeft();
