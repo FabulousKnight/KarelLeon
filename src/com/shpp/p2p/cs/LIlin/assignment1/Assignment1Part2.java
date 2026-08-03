@@ -32,7 +32,7 @@ public class Assignment1Part2 extends KarelTheRobot {
 
     }
 
-    // Karel putting beepers to the sides of the line to measure endpoints
+    // Karel putting beepers to the sides of the line to measure endpoints.
     private void settingBeepersOnTheSides() throws Exception {
         putBeeper();
         while (frontIsClear()) {
