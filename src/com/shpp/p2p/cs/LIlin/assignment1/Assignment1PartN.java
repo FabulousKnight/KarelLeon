@@ -41,7 +41,7 @@ public class Assignment1PartN extends KarelTheRobot {
         turnLeft();
         turnLeft();
     }
-    /*command to make Karol move 180 */
+    //command to make Karol move 180
     private void turnAround() throws Exception{
         turnLeft();
         turnLeft();
