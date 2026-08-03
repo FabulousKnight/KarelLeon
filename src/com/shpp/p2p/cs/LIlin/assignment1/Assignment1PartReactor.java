@@ -74,7 +74,7 @@ public class Assignment1PartReactor extends KarelTheRobot {
         turnLeft();
     }
 
-    // Karel turning 180 degrees to the right from the input position
+    // Karel turning 180 degrees to the right from the input position.
     private void turnAround() throws Exception {
         turnLeft();
         turnLeft();
