@@ -35,7 +35,7 @@ public class Assignment1Part1 extends KarelTheRobot {
 
     }
 
-    // Karel turning 180 degrees
+    // Karel turning 180 degrees from primary position
     private void turnAround() throws Exception {
         turnLeft();
         turnLeft();
