@@ -5,44 +5,48 @@ import com.shpp.karel.KarelTheRobot;
 public class Assignment1Part2 extends KarelTheRobot {
 
     public void run() throws Exception {
-        fillingLineWithBeepers();
-        puttingBeepersInTheLastCell();
-        turnAround();
-    }
-
-    private void puttingBeepersInTheLastCell() throws Exception {
-        turnAround();
-        while (beepersPresent() && frontIsClear()) {
-            pickBeeper();
-            while (frontIsClear()) {
-                move();
-            }
-            putBeeper();
-            comebackToTheSellWithBeepers();
-        }
-    }
-
-    private void comebackToTheSellWithBeepers() throws Exception {
-        turnAround();
-        while (beepersPresent()) {
+        settingBeepersOnTheSides();
+        while (noBeepersPresent()) {
+            movingBeepersOneCellToTheCenter();
             move();
         }
+        if (beepersPresent()) {
+            pickBeeper();
+        }
+
+
+    }
+
+    /* Karel moving from empty cell to the endpoint beeper, picking it up
+     * and moving beeper 1 cell to the center
+     */
+    private void movingBeepersOneCellToTheCenter() throws Exception {
+        while (noBeepersPresent()) {
+            move();
+        }
+        pickBeeper();
+        turnAround();
+        move();
+        putBeeper();
+
+
+    }
+
+    // Karel putting beepers to the sides of the line to measure endpoints
+    private void settingBeepersOnTheSides() throws Exception {
+        putBeeper();
+        while (frontIsClear()) {
+            move();
+        }
+        putBeeper();
         turnAround();
         move();
     }
 
+    //Karel turning 180 degrees from his primary position
     private void turnAround() throws Exception {
         turnLeft();
         turnLeft();
     }
-
-    private void fillingLineWithBeepers() throws Exception {
-        while (frontIsClear()) {
-            putBeeper();
-            move();
-        }
-        putBeeper();
-    }
-
 
 }
