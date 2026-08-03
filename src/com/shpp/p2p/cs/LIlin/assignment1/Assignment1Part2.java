@@ -18,7 +18,7 @@ public class Assignment1Part2 extends KarelTheRobot {
     }
 
     /* Karel moving from empty cell to the endpoint beeper, picking it up
-     * and moving beeper 1 cell to the center
+     * and moving beeper 1 cell to the center of the line
      */
     private void movingBeepersOneCellToTheCenter() throws Exception {
         while (noBeepersPresent()) {
