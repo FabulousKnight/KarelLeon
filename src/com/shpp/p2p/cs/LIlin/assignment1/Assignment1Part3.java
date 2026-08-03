@@ -77,7 +77,7 @@ public class Assignment1Part3 extends KarelTheRobot {
         }
     }
 
-    // This is checker for Karel, if he can move forward and continue filling lines from zero with beepers
+    // This is checker for Karel, if he can move forward and continue filling lines from zero with beepers.
     private void checkingNextStepsAndPuttingBeeperInLinesFromZero() throws Exception {
         while (frontIsClear()) {
             move();
