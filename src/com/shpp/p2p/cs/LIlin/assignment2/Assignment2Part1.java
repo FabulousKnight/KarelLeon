@@ -2,7 +2,17 @@ package com.shpp.p2p.cs.LIlin.assignment2;
 
 import com.shpp.cs.a.console.TextProgram;
 
+/* This program solves a quadratic equation of the form a*x^2 + b*x + c = 0.
+ * The user enters coefficients a, b and c, the program calculates the
+ * discriminant, and depending on its sign, prints two roots, one root,
+ * or a message that there are no real roots.
+ */
+
 public class Assignment2Part1 extends TextProgram {
+    /* In this method we are asking user to input 3 numbers
+     * and counting amount of roots in a quadratic equation, after calculation
+     * results is printed on the display
+     */
     public void run() {
         //We are asking User to input his numbe A
         double a = readInt("Please enter a: ");
@@ -27,9 +37,10 @@ public class Assignment2Part1 extends TextProgram {
         } else if (Discriminant == 0) {
             double x = -b / (2 * a);
             println("There is one root: " + x);
-            // If Discriminant lower than zero, there will be no roots, and we are printing it
+            /* If Discriminant lower than zero, there will be no roots, and we are printing it */
         } else {
             println("There is no roots");
         }
     }
 }
+
