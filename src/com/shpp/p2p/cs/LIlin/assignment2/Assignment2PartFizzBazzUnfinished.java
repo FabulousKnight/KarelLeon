@@ -2,7 +2,7 @@ package com.shpp.p2p.cs.LIlin.assignment2;
 
 import com.shpp.cs.a.console.TextProgram;
 
-public class Assignment2PartFizzBazz extends TextProgram {
+public class Assignment2PartFizzBazzUnfinished extends TextProgram {
 
     public void run() {
         double number = 0;
