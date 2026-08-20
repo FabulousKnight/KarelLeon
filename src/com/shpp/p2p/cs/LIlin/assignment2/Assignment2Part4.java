@@ -23,9 +23,9 @@ public class Assignment2Part4 extends WindowProgram {
 
     // Draws the three lines, the outline box behind them, and the flag name
     public void run() {
-        DrawFirstLine();
-        DrawSecondLine();
-        DrawThirdLine();
+        DrawLines(getWidth() / 2 - FLAG_WIDTH / 2, EmeraldGreen);
+        DrawLines(getWidth() / 2 - LINE_WIDTH / 2, Color.WHITE);
+        DrawLines(getWidth() / 2 + LINE_WIDTH / 2, EmeraldGreen);
         DrawFlagBox();
         PrintCountryFlagName();
 
@@ -38,30 +38,12 @@ public class Assignment2Part4 extends WindowProgram {
         add(FlagBox);
     }
 
-    // Draws the left line of the flag, filled with green
-    void DrawFirstLine() {
-        GRect FirstLine = new GRect(getWidth() / 2 - FLAG_WIDTH / 2, getHeight() / 2 - LINE_HEIGHT / 2, LINE_WIDTH, LINE_HEIGHT);
-        FirstLine.setColor(EmeraldGreen);
-        FirstLine.setFilled(true);
-        FirstLine.setFillColor(EmeraldGreen);
-        add(FirstLine);
-    }
-
-    // Draws the middle line of the flag, filled with white
-    void DrawSecondLine() {
-        GRect SecondLine = new GRect(getWidth() / 2 - LINE_WIDTH / 2, getHeight() / 2 - LINE_HEIGHT / 2, LINE_WIDTH, LINE_HEIGHT);
-        SecondLine.setColor(Color.WHITE);
-        SecondLine.setFilled(true);
-        SecondLine.setFillColor(Color.WHITE);
-        add(SecondLine);
-    }
-
-    void DrawThirdLine() {
-        GRect ThirdLine = new GRect(getWidth() / 2 + LINE_WIDTH / 2, getHeight() / 2 - LINE_HEIGHT / 2, LINE_WIDTH, LINE_HEIGHT);
-        ThirdLine.setColor(EmeraldGreen);
-        ThirdLine.setFilled(true);
-        ThirdLine.setFillColor(EmeraldGreen);
-        add(ThirdLine);
+    void DrawLines(double lineOffsetWidth, Color lineColor) {
+        GRect Lines = new GRect(lineOffsetWidth, getHeight() / 2 - LINE_HEIGHT / 2, LINE_WIDTH, LINE_HEIGHT);
+        Lines.setColor(lineColor);
+        Lines.setFilled(true);
+        Lines.setFillColor(lineColor);
+        add(Lines);
     }
 
     // Draws the right line of the flag, filled with green

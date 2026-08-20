@@ -30,18 +30,25 @@ public class Assignment2Part6 extends WindowProgram {
      * two vertical positions to create the wavy caterpillar shape.
      */
     private void DrawCircles(int i) {
+        double x = i * (DIAMETER / 2);
+        double y = calculateCircleY(i);
+
+        GOval Circle = new GOval(x, y, DIAMETER, DIAMETER);
+        Circle.setColor(Color.RED);
+        Circle.setFilled(true);
+        Circle.setFillColor(Color.GREEN);
+        add(Circle);
+    }
+
+    /* Returns the vertical position of circle number i:
+     * even-indexed circles are positioned higher, odd-indexed circles lower,
+     * creating the wavy shape of the caterpillar.
+     */
+    private double calculateCircleY(int i) {
         if (i % 2 == 0) {
-            GOval Circle = new GOval(i * (DIAMETER / 2), getHeight() / 2 - DIAMETER / 2, DIAMETER, DIAMETER);
-            Circle.setColor(Color.RED);
-            Circle.setFilled(true);
-            Circle.setFillColor(Color.GREEN);
-            add(Circle);
+            return getHeight() / 2 - DIAMETER / 2;
         } else {
-            GOval Circle = new GOval(i * (DIAMETER / 2), getHeight() / 2 - (DIAMETER - (DIAMETER / 4)), DIAMETER, DIAMETER);
-            Circle.setColor(Color.RED);
-            Circle.setFilled(true);
-            Circle.setFillColor(Color.GREEN);
-            add(Circle);
+            return getHeight() / 2 - (DIAMETER - (DIAMETER / 4));
         }
     }
 

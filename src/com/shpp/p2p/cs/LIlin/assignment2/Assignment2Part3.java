@@ -60,45 +60,28 @@ public class Assignment2Part3 extends WindowProgram {
      */
     void drawPaw(double x, double y) {
         // here is your turn to type some code!!
-        drawOvalPaw1(x, y);
-        drawOvalPaw2(x, y);
-        drawOvalPaw3(x, y);
-        drawOvalHeel(x, y);
+        drawOval(x, y, THIRD_TOE_OFFSET_X, THIRD_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        drawOval(x, y, FIRST_TOE_OFFSET_X, FIRST_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        drawOval(x, y, SECOND_TOE_OFFSET_X, SECOND_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        drawOval(x, y, HEEL_OFFSET_X, HEEL_OFFSET_Y, HEEL_WIDTH, HEEL_HEIGHT);
+
     }
 
-    // Draws the first, left, toe of the pawprint at (x, y)
-    private void drawOvalPaw1(double x, double y) {
-        GOval OvalBoxPaw1 = new GOval(x + FIRST_TOE_OFFSET_X, y + FIRST_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        OvalBoxPaw1.setColor(Color.BLACK);
-        OvalBoxPaw1.setFilled(true);
-        OvalBoxPaw1.setFillColor(Color.BLACK);
-        add(OvalBoxPaw1);
-    }
-
-    // Draws the second, middle, toe of the pawprint at (x, y)
-    private void drawOvalPaw2(double x, double y) {
-        GOval OvalBoxPaw2 = new GOval(x + SECOND_TOE_OFFSET_X, y + SECOND_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        OvalBoxPaw2.setColor(Color.BLACK);
-        OvalBoxPaw2.setFilled(true);
-        OvalBoxPaw2.setFillColor(Color.BLACK);
-        add(OvalBoxPaw2);
-    }
-
-    // Draws the third, right, toe of the pawprint at (x, y)
-    private void drawOvalPaw3(double x, double y) {
-        GOval OvalBoxPaw3 = new GOval(x + THIRD_TOE_OFFSET_X, y + THIRD_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        OvalBoxPaw3.setColor(Color.BLACK);
-        OvalBoxPaw3.setFilled(true);
-        OvalBoxPaw3.setFillColor(Color.BLACK);
-        add(OvalBoxPaw3);
-    }
-
-    // Draws the heel of the pawprint at (x, y)
-    private void drawOvalHeel(double x, double y) {
-        GOval OvalBoxHeel = new GOval(x + HEEL_OFFSET_X, y + HEEL_OFFSET_Y, HEEL_WIDTH, HEEL_HEIGHT);
-        OvalBoxHeel.setColor(Color.BLACK);
-        OvalBoxHeel.setFilled(true);
-        OvalBoxHeel.setFillColor(Color.BLACK);
-        add(OvalBoxHeel);
+    /**
+     * Draws the heel and the toes of the pawprint at (x, y)
+     * @param x
+     * @param y
+     * @param itemOffsetX
+     * @param itemOffsetY
+     * @param itemWidth
+     * @param itemHeight
+     */
+    public void drawOval(double x, double y, double itemOffsetX, double itemOffsetY, double itemWidth, double itemHeight) {
+        GOval OvalBoxes = new GOval(x + itemOffsetX, y + itemOffsetY, itemWidth, itemHeight);
+        OvalBoxes.setColor(Color.BLACK);
+        OvalBoxes.setFilled(true);
+        OvalBoxes.setFillColor(Color.BLACK);
+        add(OvalBoxes);
     }
 }
+
